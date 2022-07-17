@@ -1,0 +1,79 @@
+<nav>
+  <ul class="mcd-menu">
+    <li (click)="GetCategoriesBooks('home')" >
+      <a  class="active">
+        <i class="fa fa-home"></i>
+        <strong>Home</strong>
+
+      </a>
+    </li>
+    <li>
+      <a (click)="GetCategoriesBooks('Geology')">
+        <i class="fa fa-edit"></i>
+        <strong>Geology</strong>
+      </a>
+    </li>
+    <li>
+      <a (click)="GetCategoriesBooks('Computer Science')">
+        <i class="fa fa-gift"></i>
+        <strong>Computer Science</strong>
+      </a>
+    </li>
+    <li>
+      <a (click)="GetCategoriesBooks('Chemistry')">
+        <i class="fa fa-globe"></i>
+        <strong>Chemistry</strong>
+      </a>
+    </li>
+    <!-- <li>
+      <a href="">
+        <i class="fa fa-comments-o"></i>
+        <strong>Blog</strong>
+      </a>
+      <ul>
+        <li><a href="#"><i class="fa fa-globe"></i>Mission</a></li>
+        <li>
+          <a href="#"><i class="fa fa-group"></i>Our Team</a>
+          <ul>
+            <li><a href="#"><i class="fa fa-female"></i>Leyla Sparks</a></li>
+            <li>
+              <a href="#"><i class="fa fa-male"></i>Gleb Ismailov</a>
+              <ul>
+                <li><a href="#"><i class="fa fa-leaf"></i>About</a></li>
+                <li><a href="#"><i class="fa fa-tasks"></i>Skills</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-trophy"></i>Rewards</a></li>
+        <li><a href="#"><i class="fa fa-certificate"></i>Certificates</a></li>
+      </ul>
+    </li> -->
+    <li>
+      <a (click)="GetCategoriesBooks('Physics')">
+        <i class="fa fa-picture-o"></i>
+        <strong>Physics</strong>
+      </a>
+    </li>
+    <li>
+      <a (click)="GetCategoriesBooks('Mathematics')">
+        <i class="fa fa-envelope-o"></i>
+        <strong>Mathematics</strong>
+      </a>
+    </li>
+    <li class="float">
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Search Book</mat-label>
+          <input type="text" matInput #input [matAutocomplete]="auto" (input)="onKeyUp(input.value)">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option (onSelectionChange)="onSelectionChange($event,input.value)" *ngFor="let option of filteredOptions" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,10 @@
+<p-toast position="top-left"></p-toast>
+<h1 mat-dialog-title>Confirm Payment</h1>
+<div mat-dialog-content>
+  <p>Your Orders Cost</p>
+  <strong>{{data.cost}}</strong>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="ConfirmPay()">Accept</button>
+  <button mat-raised-button color="accent" (click)="onNoClick()">No , Thanks</button>
+</div>

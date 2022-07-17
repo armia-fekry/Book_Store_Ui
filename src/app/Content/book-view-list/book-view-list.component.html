@@ -1,0 +1,16 @@
+
+<section class="cards" *ngFor="let book of bookLists">
+  <app-book-view [Book]="book">
+  </app-book-view>
+</section>
+<section>
+<mat-paginator [length]="100"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 25, 100]"
+            aria-label="Select page"
+            (page)="onPaginatorChanged($event)">
+</mat-paginator>
+</section>
+
+
+

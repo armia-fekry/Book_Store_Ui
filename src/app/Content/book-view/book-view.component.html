@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="container" (click)="GoToDetails()">
+
+	<div class="product-details">
+	<h1>{{Book.title}}</h1>
+	<p-rating [(ngModel)]="Book.reviews" [disabled]="true" [cancel]="false"></p-rating>
+			<p class="information">
+        {{Book.description}}
+      </p>
+<div class="control">
+
+	<button class="btn">
+	 <span class="price">${{Book.price}}</span>
+   <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+   <span class="buy">Get now</span>
+ </button>
+
+</div>
+
+</div>
+
+<div class="product-image">
+
+	<!-- <img src="{{'data:image/png;base64,'+Book.img}}" alt=""> -->
+	<img [src]="imgUrl+Book.imgPath" alt="">
+
+
+<div class="info">
+	<h2 class="Description"> Description</h2>
+	<ul>
+		<li><strong>Number Of Pages  : </strong>{{Book.numPages}}</li>
+		<li><strong>Authers : </strong>{{Book.authers}}</li>
+		<li><strong>Publishers: </strong>{{Book.publishers}}</li>
+	</ul>
+</div>
+</div>
+
+</div>
+
+

@@ -1,0 +1,16 @@
+<p-toast position="top-left"></p-toast>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="container__sidebar">
+    <app-aside-nav (selectedCategoryEvent)="onSelectedCategory($event)" (selectedBookEvent)="onSelectedBook($event)" [childBookNames]="bookNames"></app-aside-nav>
+  </aside>
+
+  <!-- Main -->
+  <main class="container__main">
+    <app-book-view-list [selectedBookName]="selectedBookName" ></app-book-view-list>
+      <!-- <button  mat-fab color="primary" class="float">
+        <i class="material-icons mr-4 p-text-secondary" pBadge style="font-size: 2rem" [value]="'10+'" severity="danger">add_shopping_cart</i>
+      </button> -->
+  </main>
+</div>
